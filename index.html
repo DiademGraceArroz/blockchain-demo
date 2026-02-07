@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blockchain Demo</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>⛓️ Blockchain Demo</h1>
+        <div class="validation-indicator" id="validationIndicator">
+          <span class="status-icon">✓</span>
+          <span class="status-text">Chain Valid</span>
+        </div>
+      </header>
+
+      <div class="controls">
+        <div class="input-group">
+          <label for="blockData">Block Data:</label>
+          <input
+            type="text"
+            id="blockData"
+            placeholder="Enter transaction data (e.g., Alice pays Bob 10)"
+            value="Alice pays Bob 10 BTC"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="difficulty">Mining Difficulty:</label>
+          <select id="difficulty">
+            <option value="1">1 (Easy - 1 zero)</option>
+            <option value="2" selected>2 (Medium - 2 zeros)</option>
+            <option value="3">3 (Hard - 3 zeros)</option>
+            <option value="4">4 (Very Hard - 4 zeros)</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button id="mineBtn" class="btn btn-primary">
+            <span class="btn-text">⛏️ Mine Block</span>
+            <span class="spinner hidden">⚡ Mining...</span>
+          </button>
+          <button id="autoMineBtn" class="btn btn-secondary">
+            🤖 Auto Mine 5 Blocks
+          </button>
+          <button id="resetBtn" class="btn btn-danger">🔄 Reset Chain</button>
+        </div>
+      </div>
+
+      <div class="stats" id="stats">
+        <div class="stat-card">
+          <h3>Total Blocks</h3>
+          <p id="totalBlocks">1</p>
+        </div>
+        <div class="stat-card">
+          <h3>Last Mine Time</h3>
+          <p id="lastMineTime">-</p>
+        </div>
+        <div class="stat-card">
+          <h3>Average Mine Time</h3>
+          <p id="avgMineTime">-</p>
+        </div>
+        <div class="stat-card">
+          <h3>Current Difficulty</h3>
+          <p id="currentDifficulty">2</p>
+        </div>
+      </div>
+
+      <div class="ledger-section">
+        <h2>📜 Transaction Ledger</h2>
+        <div class="ledger" id="ledger">
+          <!-- Ledger will be rendered here -->
+        </div>
+      </div>
+
+      <div class="blockchain" id="blockchain">
+        <!-- Blocks will be rendered here -->
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
